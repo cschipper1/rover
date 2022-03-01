@@ -172,8 +172,7 @@ RUN apt-get update && \
     chmod +x /opt/microsoft/powershell/7/pwsh && \
     ln -s /opt/microsoft/powershell/7/pwsh /usr/bin/pwsh && \
     echo "Installing PowerShell modules..." && \
-    pwsh -Command Install-Module -name Az.DesktopVirtualization -Force && \
-    pwsh -Command Install-Module -name Az.Resources -Force && \
+    pwsh -Command Install-Module -Name Az -Scope AllUsers -Repository PSGallery -Force && \
     #
     # kubectl node shell
     #
